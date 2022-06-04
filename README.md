@@ -27,21 +27,21 @@ There are two buttons on the menu page:
 2) "find your Chuck Norris" - by pressing this button the user will go to the next page where at first a short instruction is waiting for him and then the user will be able to appreciate Chuck Norris jokes
 
 <p align="center">
-  <img src="screenshots\screen2.png" width="350" title="menu_screen">
+  <img src="myApp\screen2.png" width="350" title="menu_screen">
 </p>
 
 ###  Massage page
 On this page the user receives a little amusing message from the creator
 
 <p align="center">
-  <img src="screenshots\screen3.png" width="350" title="message_screen">
+  <img src="myApp\screen3.png" width="350" title="message_screen">
 </p>
 
 ### "Help" page
 On this page the user is presented with a short instruction on how to use the application
 
 <p align="center">
-  <img src="screenshots\screen4.png" width="350" title="help_screen">
+  <img src="myApp\screen4.png" width="350" title="help_screen">
 </p>
 
 ### "Tinder" page
@@ -52,7 +52,7 @@ There are also two navigation buttons at the bottom
 2) a button with a question mark icon allows the user to read the user manual again
 
 <p align="center">
-  <img src="screenshots\screen5.png" width="350" title="help_screen">
+  <img src="myApp\screen5.png" width="350" title="help_screen">
 </p>
 
 # I hope you enjoy my first app)
