@@ -31,8 +31,8 @@ class _MainScreenState extends State<MainScreen> {
                                   Color(0xff33ccff),
                                   Color(0xffff99cc),
                                 ],
-                              ).createShader(
-                                  Rect.fromLTWH(100.0, 150.0, 100.0, 100.0)),
+                              ).createShader(const Rect.fromLTWH(
+                                  100.0, 150.0, 100.0, 100.0)),
                             fontSize: 25.0,
                             shadows: const <Shadow>[
                               Shadow(
