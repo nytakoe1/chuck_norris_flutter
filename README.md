@@ -1,16 +1,58 @@
-# first_draft
+# Tinder with Chuck Norris
 
-A new Flutter project.
+A bright app with an interesting design in which the user can enjoy Chuck Norris jokes
 
-## Getting Started
+## Foreword
 
-This project is a starting point for a Flutter application.
+This application has similar functionality to Tinder \
+The user can like or dislike jokes\
+The app also has a small post from the creator
 
-A few resources to get you started if this is your first Flutter project:
+### Link to the .apk file : [here](build/app/outputs/flutter-apk/app-release.apk)
+___
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Instructions for using the app
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Main page
+On the front page is the name of the application
+
+<p align="center">
+  <img src="myApp\screen1.png" width="350" title="main_screen">
+</p>
+
+### Menu page
+There are two buttons on the menu page:
+1) "massage from creator» -нажав на эту кнопку пользователь получит небольшое сообщение от создателя
+
+2) "find your Chuck Norris" - by pressing this button the user will go to the next page where at first a short instruction is waiting for him and then the user will be able to appreciate Chuck Norris jokes
+
+<p align="center">
+  <img src="screenshots\screen2.png" width="350" title="menu_screen">
+</p>
+
+###  Massage page
+On this page the user receives a little amusing message from the creator
+
+<p align="center">
+  <img src="screenshots\screen3.png" width="350" title="message_screen">
+</p>
+
+### "Help" page
+On this page the user is presented with a short instruction on how to use the application
+
+<p align="center">
+  <img src="screenshots\screen4.png" width="350" title="help_screen">
+</p>
+
+### "Tinder" page
+On this page, the user can switch between jokes by clicking on the heart icons.
+There are also two navigation buttons at the bottom
+1) the button with the house icon takes the user back to the menu page
+
+2) a button with a question mark icon allows the user to read the user manual again
+
+<p align="center">
+  <img src="screenshots\screen5.png" width="350" title="help_screen">
+</p>
+
+# I hope you enjoy my first app)
