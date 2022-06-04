@@ -160,11 +160,20 @@ class _TinderScreenState extends State<TinderScreen> {
               children: [
                 IconButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '/firstTip');
+                      Navigator.pushNamedAndRemoveUntil(
+                          context, '/firstTip', (route) => false);
                     },
                     icon: const Icon(Icons.help_outline_outlined),
                     iconSize: 35,
-                    color: const Color(0xffff99cc))
+                    color: const Color(0xffff99cc)),
+                IconButton(
+                    onPressed: () {
+                      Navigator.pushNamedAndRemoveUntil(
+                          context, '/menu', (route) => false);
+                    },
+                    icon: const Icon(Icons.home_outlined),
+                    iconSize: 35,
+                    color: const Color(0xffff99cc)),
               ],
             ),
           ],

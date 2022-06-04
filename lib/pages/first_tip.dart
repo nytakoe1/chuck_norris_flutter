@@ -252,13 +252,14 @@ class FirstTipScreen extends StatelessWidget {
               children: [
                 TextButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '/tinder');
+                      Navigator.pushNamedAndRemoveUntil(
+                          context, '/tinder', (route) => false);
                     },
                     style: TextButton.styleFrom(
                       textStyle: const TextStyle(fontSize: 18),
                       primary: const Color(0xffff99cc),
                     ),
-                    child: const Text('Start'))
+                    child: const Text('Start')),
               ],
             ),
           ],

@@ -53,7 +53,8 @@ class _MainScreenState extends State<MainScreen> {
                   const Padding(padding: EdgeInsets.only(left: 300)),
                   TextButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '/menu');
+                      Navigator.pushNamedAndRemoveUntil(
+                          context, '/menu', (route) => false);
                     },
                     style: TextButton.styleFrom(
                         primary: const Color(0xffff99cc),
