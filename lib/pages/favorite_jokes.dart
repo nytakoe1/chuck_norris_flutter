@@ -72,59 +72,56 @@ class _FavoriteJokesState extends State<FavoriteJokes> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: const Color(0xffff99cc),
-          title: Text('fav'.tr),
-          titleTextStyle: const TextStyle(fontSize: 20, shadows: <Shadow>[
-            Shadow(
-              offset: Offset(2.0, 2.0),
-              blurRadius: 3.0,
-              color: Color.fromARGB(130, 0, 0, 0),
-            ),
-          ]),
-          centerTitle: true,
-        ),
-        body: StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
-          stream: FirebaseFirestore.instance
-              .collection('favoriteJokes')
-              .snapshots(),
-          builder: (context, snapshot) {
-            if (snapshot.hasError) return Text('Error');
-            if (snapshot.hasData) {
-              final docs = snapshot.data!.docs;
-              return ListView.builder(
-                itemCount: docs.length,
-                itemBuilder: (BuildContext context, int index) {
-                  final DocumentSnapshot documentSnapshot =
-                      snapshot.data!.docs[index];
-                  final data = docs[index].data();
-                  return Dismissible(
-                    key: Key(data['id']),
-                    child: Card(
-                      child: ListTile(
-                        title: Text(data['value']),
-                        trailing: IconButton(
-                          icon: Icon(
-                            Icons.delete,
-                            color: Color(0xffff99cc),
-                          ),
-                          onPressed: () {
-                            _showDialog(documentSnapshot.id);
-                            // setState(() {
-                            //   favorite_list.removeAt(index);
-                            // });
-                          },
-                        ),
+      appBar: AppBar(
+        backgroundColor: const Color(0xffff99cc),
+        title: Text('fav'.tr),
+        titleTextStyle: const TextStyle(fontSize: 20, shadows: <Shadow>[
+          Shadow(
+            offset: Offset(2.0, 2.0),
+            blurRadius: 3.0,
+            color: Color.fromARGB(130, 0, 0, 0),
+          ),
+        ]),
+        centerTitle: true,
+      ),
+      body: StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
+        stream:
+            FirebaseFirestore.instance.collection('favoriteJokes').snapshots(),
+        builder: (context, snapshot) {
+          if (snapshot.hasError) return Text('Error');
+          if (snapshot.hasData) {
+            final docs = snapshot.data!.docs;
+            return ListView.builder(
+              itemCount: docs.length,
+              itemBuilder: (BuildContext context, int index) {
+                final DocumentSnapshot documentSnapshot =
+                    snapshot.data!.docs[index];
+                final data = docs[index].data();
+                return Card(
+                  child: ListTile(
+                    title: Text(data['value']),
+                    trailing: IconButton(
+                      icon: Icon(
+                        Icons.delete,
+                        color: Color(0xffff99cc),
                       ),
+                      onPressed: () {
+                        _showDialog(documentSnapshot.id);
+                        // setState(() {
+                        //   favorite_list.removeAt(index);
+                        // });
+                      },
                     ),
-                  );
-                },
-              );
-            }
-            return Center(
-              child: CircularProgressIndicator(),
+                  ),
+                );
+              },
             );
-          },
-        ));
+          }
+          return Center(
+            child: CircularProgressIndicator(),
+          );
+        },
+      ),
+    );
   }
 }
