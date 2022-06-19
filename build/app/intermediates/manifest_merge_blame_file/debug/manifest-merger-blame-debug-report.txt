@@ -5,7 +5,7 @@
 5    android:versionName="1.0.0" >
 6
 7    <uses-sdk
-8        android:minSdkVersion="16"
+8        android:minSdkVersion="25"
 9        android:targetSdkVersion="31" />
 10    <!--
 11         The INTERNET permission is required for development. Specifically,
@@ -15,59 +15,180 @@
 15    <uses-permission android:name="android.permission.INTERNET" />
 15-->/Users/yanapavlova/Documents/Flutter/chuck_norris_flutter/android/app/src/debug/AndroidManifest.xml:7:5-66
 15-->/Users/yanapavlova/Documents/Flutter/chuck_norris_flutter/android/app/src/debug/AndroidManifest.xml:7:22-64
-16
-17    <application
-18        android:name="android.app.Application"
-19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-19-->[androidx.core:core:1.6.0] /Users/yanapavlova/.gradle/caches/transforms-3/acbce933e4b464a5224ed377a62db1f5/transformed/core-1.6.0/AndroidManifest.xml:24:18-86
-20        android:debuggable="true"
-21        android:icon="@mipmap/ic_launcher"
-22        android:label="first_draft" >
-23        <activity
-24            android:name="com.example.first_draft.MainActivity"
-25            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-26            android:exported="true"
-27            android:hardwareAccelerated="true"
-28            android:launchMode="singleTop"
-29            android:theme="@style/LaunchTheme"
-30            android:windowSoftInputMode="adjustResize" >
-31
-32            <!--
-33                 Specifies an Android theme to apply to this Activity as soon as
-34                 the Android process has started. This theme is visible to the user
-35                 while the Flutter UI initializes. After that, this theme continues
-36                 to determine the Window background behind the Flutter UI.
-37            -->
-38            <meta-data
-39                android:name="io.flutter.embedding.android.NormalTheme"
-40                android:resource="@style/NormalTheme" />
-41
-42            <intent-filter>
-43                <action android:name="android.intent.action.MAIN" />
-44
-45                <category android:name="android.intent.category.LAUNCHER" />
-46            </intent-filter>
-47        </activity>
-48        <!--
-49             Don't delete the meta-data below.
-50             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
-51        -->
-52        <meta-data
-53            android:name="flutterEmbedding"
-54            android:value="2" />
-55
-56        <uses-library
-56-->[androidx.window:window:1.0.0-beta04] /Users/yanapavlova/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
-57            android:name="androidx.window.extensions"
-57-->[androidx.window:window:1.0.0-beta04] /Users/yanapavlova/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
-58            android:required="false" />
-58-->[androidx.window:window:1.0.0-beta04] /Users/yanapavlova/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
-59        <uses-library
-59-->[androidx.window:window:1.0.0-beta04] /Users/yanapavlova/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
-60            android:name="androidx.window.sidecar"
-60-->[androidx.window:window:1.0.0-beta04] /Users/yanapavlova/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
-61            android:required="false" />
-61-->[androidx.window:window:1.0.0-beta04] /Users/yanapavlova/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
-62    </application>
-63
-64</manifest>
+16    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+16-->[:connectivity] /Users/yanapavlova/Documents/Flutter/chuck_norris_flutter/build/connectivity/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-79
+16-->[:connectivity] /Users/yanapavlova/Documents/Flutter/chuck_norris_flutter/build/connectivity/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-76
+17
+18    <application
+19        android:name="android.app.Application"
+20        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+20-->[androidx.core:core:1.6.0] /Users/yanapavlova/.gradle/caches/transforms-3/51a4d184cd6599afdadd7a31dda0ee15/transformed/core-1.6.0/AndroidManifest.xml:24:18-86
+21        android:debuggable="true"
+22        android:extractNativeLibs="false"
+23        android:icon="@mipmap/ic_launcher"
+24        android:label="Chuck_Tinder" >
+25        <activity
+26            android:name="com.example.first_draft.MainActivity"
+27            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+28            android:exported="true"
+29            android:hardwareAccelerated="true"
+30            android:launchMode="singleTop"
+31            android:theme="@style/LaunchTheme"
+32            android:windowSoftInputMode="adjustResize" >
+33
+34            <!--
+35                 Specifies an Android theme to apply to this Activity as soon as
+36                 the Android process has started. This theme is visible to the user
+37                 while the Flutter UI initializes. After that, this theme continues
+38                 to determine the Window background behind the Flutter UI.
+39            -->
+40            <meta-data
+41                android:name="io.flutter.embedding.android.NormalTheme"
+42                android:resource="@style/NormalTheme" />
+43
+44            <intent-filter>
+45                <action android:name="android.intent.action.MAIN" />
+46
+47                <category android:name="android.intent.category.LAUNCHER" />
+48            </intent-filter>
+49        </activity>
+50        <!--
+51             Don't delete the meta-data below.
+52             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+53        -->
+54        <meta-data
+55            android:name="flutterEmbedding"
+56            android:value="2" />
+57
+58        <service
+58-->[:firebase_crashlytics] /Users/yanapavlova/Documents/Flutter/chuck_norris_flutter/build/firebase_crashlytics/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-14:19
+59            android:name="com.google.firebase.components.ComponentDiscoveryService"
+59-->[:firebase_crashlytics] /Users/yanapavlova/Documents/Flutter/chuck_norris_flutter/build/firebase_crashlytics/intermediates/merged_manifest/debug/AndroidManifest.xml:10:18-89
+60            android:directBootAware="true"
+60-->[com.google.firebase:firebase-common:20.1.1] /Users/yanapavlova/.gradle/caches/transforms-3/6a4c6d1c6c123dd0fc5c77c2fb3649c5/transformed/jetified-firebase-common-20.1.1/AndroidManifest.xml:35:13-43
+61            android:exported="false" >
+61-->[com.google.firebase:firebase-firestore:24.1.2] /Users/yanapavlova/.gradle/caches/transforms-3/fbafe6af15a331ba3efd477496b5876d/transformed/jetified-firebase-firestore-24.1.2/AndroidManifest.xml:19:13-37
+62            <meta-data
+62-->[:firebase_crashlytics] /Users/yanapavlova/Documents/Flutter/chuck_norris_flutter/build/firebase_crashlytics/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-13:85
+63                android:name="com.google.firebase.components:io.flutter.plugins.firebase.crashlytics.FlutterFirebaseAppRegistrar"
+63-->[:firebase_crashlytics] /Users/yanapavlova/Documents/Flutter/chuck_norris_flutter/build/firebase_crashlytics/intermediates/merged_manifest/debug/AndroidManifest.xml:12:17-130
+64                android:value="com.google.firebase.components.ComponentRegistrar" />
+64-->[:firebase_crashlytics] /Users/yanapavlova/Documents/Flutter/chuck_norris_flutter/build/firebase_crashlytics/intermediates/merged_manifest/debug/AndroidManifest.xml:13:17-82
+65            <meta-data
+65-->[:firebase_storage] /Users/yanapavlova/Documents/Flutter/chuck_norris_flutter/build/firebase_storage/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-13:85
+66                android:name="com.google.firebase.components:io.flutter.plugins.firebase.storage.FlutterFirebaseAppRegistrar"
+66-->[:firebase_storage] /Users/yanapavlova/Documents/Flutter/chuck_norris_flutter/build/firebase_storage/intermediates/merged_manifest/debug/AndroidManifest.xml:12:17-126
+67                android:value="com.google.firebase.components.ComponentRegistrar" />
+67-->[:firebase_storage] /Users/yanapavlova/Documents/Flutter/chuck_norris_flutter/build/firebase_storage/intermediates/merged_manifest/debug/AndroidManifest.xml:13:17-82
+68            <meta-data
+68-->[:cloud_firestore] /Users/yanapavlova/Documents/Flutter/chuck_norris_flutter/build/cloud_firestore/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-13:85
+69                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
+69-->[:cloud_firestore] /Users/yanapavlova/Documents/Flutter/chuck_norris_flutter/build/cloud_firestore/intermediates/merged_manifest/debug/AndroidManifest.xml:12:17-134
+70                android:value="com.google.firebase.components.ComponentRegistrar" />
+70-->[:cloud_firestore] /Users/yanapavlova/Documents/Flutter/chuck_norris_flutter/build/cloud_firestore/intermediates/merged_manifest/debug/AndroidManifest.xml:13:17-82
+71            <meta-data
+71-->[:firebase_core] /Users/yanapavlova/Documents/Flutter/chuck_norris_flutter/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-13:85
+72                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
+72-->[:firebase_core] /Users/yanapavlova/Documents/Flutter/chuck_norris_flutter/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:12:17-124
+73                android:value="com.google.firebase.components.ComponentRegistrar" />
+73-->[:firebase_core] /Users/yanapavlova/Documents/Flutter/chuck_norris_flutter/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:13:17-82
+74            <meta-data
+74-->[com.google.firebase:firebase-firestore:24.1.2] /Users/yanapavlova/.gradle/caches/transforms-3/fbafe6af15a331ba3efd477496b5876d/transformed/jetified-firebase-firestore-24.1.2/AndroidManifest.xml:20:13-22:85
+75                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+75-->[com.google.firebase:firebase-firestore:24.1.2] /Users/yanapavlova/.gradle/caches/transforms-3/fbafe6af15a331ba3efd477496b5876d/transformed/jetified-firebase-firestore-24.1.2/AndroidManifest.xml:21:17-111
+76                android:value="com.google.firebase.components.ComponentRegistrar" />
+76-->[com.google.firebase:firebase-firestore:24.1.2] /Users/yanapavlova/.gradle/caches/transforms-3/fbafe6af15a331ba3efd477496b5876d/transformed/jetified-firebase-firestore-24.1.2/AndroidManifest.xml:22:17-82
+77            <meta-data
+77-->[com.google.firebase:firebase-crashlytics:18.2.10] /Users/yanapavlova/.gradle/caches/transforms-3/0e486782c3bfc4a7c09bc764c398058b/transformed/jetified-firebase-crashlytics-18.2.10/AndroidManifest.xml:18:13-20:85
+78                android:name="com.google.firebase.components:com.google.firebase.crashlytics.CrashlyticsRegistrar"
+78-->[com.google.firebase:firebase-crashlytics:18.2.10] /Users/yanapavlova/.gradle/caches/transforms-3/0e486782c3bfc4a7c09bc764c398058b/transformed/jetified-firebase-crashlytics-18.2.10/AndroidManifest.xml:19:17-115
+79                android:value="com.google.firebase.components.ComponentRegistrar" />
+79-->[com.google.firebase:firebase-crashlytics:18.2.10] /Users/yanapavlova/.gradle/caches/transforms-3/0e486782c3bfc4a7c09bc764c398058b/transformed/jetified-firebase-crashlytics-18.2.10/AndroidManifest.xml:20:17-82
+80            <meta-data
+80-->[com.google.firebase:firebase-storage:20.0.1] /Users/yanapavlova/.gradle/caches/transforms-3/85576d22b635c049f61406729d9cfb26/transformed/jetified-firebase-storage-20.0.1/AndroidManifest.xml:33:13-35:85
+81                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+81-->[com.google.firebase:firebase-storage:20.0.1] /Users/yanapavlova/.gradle/caches/transforms-3/85576d22b635c049f61406729d9cfb26/transformed/jetified-firebase-storage-20.0.1/AndroidManifest.xml:34:17-107
+82                android:value="com.google.firebase.components.ComponentRegistrar" />
+82-->[com.google.firebase:firebase-storage:20.0.1] /Users/yanapavlova/.gradle/caches/transforms-3/85576d22b635c049f61406729d9cfb26/transformed/jetified-firebase-storage-20.0.1/AndroidManifest.xml:35:17-82
+83            <meta-data
+83-->[com.google.firebase:firebase-installations:17.0.1] /Users/yanapavlova/.gradle/caches/transforms-3/a1512c266bbe21a222e2087b42c2d08f/transformed/jetified-firebase-installations-17.0.1/AndroidManifest.xml:18:13-20:85
+84                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+84-->[com.google.firebase:firebase-installations:17.0.1] /Users/yanapavlova/.gradle/caches/transforms-3/a1512c266bbe21a222e2087b42c2d08f/transformed/jetified-firebase-installations-17.0.1/AndroidManifest.xml:19:17-127
+85                android:value="com.google.firebase.components.ComponentRegistrar" />
+85-->[com.google.firebase:firebase-installations:17.0.1] /Users/yanapavlova/.gradle/caches/transforms-3/a1512c266bbe21a222e2087b42c2d08f/transformed/jetified-firebase-installations-17.0.1/AndroidManifest.xml:20:17-82
+86        </service>
+87
+88        <uses-library
+88-->[androidx.window:window:1.0.0-beta04] /Users/yanapavlova/.gradle/caches/transforms-3/65d7f496e0c0fefec8fa7195c7c8a034/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
+89            android:name="androidx.window.extensions"
+89-->[androidx.window:window:1.0.0-beta04] /Users/yanapavlova/.gradle/caches/transforms-3/65d7f496e0c0fefec8fa7195c7c8a034/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
+90            android:required="false" />
+90-->[androidx.window:window:1.0.0-beta04] /Users/yanapavlova/.gradle/caches/transforms-3/65d7f496e0c0fefec8fa7195c7c8a034/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
+91        <uses-library
+91-->[androidx.window:window:1.0.0-beta04] /Users/yanapavlova/.gradle/caches/transforms-3/65d7f496e0c0fefec8fa7195c7c8a034/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
+92            android:name="androidx.window.sidecar"
+92-->[androidx.window:window:1.0.0-beta04] /Users/yanapavlova/.gradle/caches/transforms-3/65d7f496e0c0fefec8fa7195c7c8a034/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
+93            android:required="false" />
+93-->[androidx.window:window:1.0.0-beta04] /Users/yanapavlova/.gradle/caches/transforms-3/65d7f496e0c0fefec8fa7195c7c8a034/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
+94
+95        <provider
+95-->[com.google.firebase:firebase-common:20.1.1] /Users/yanapavlova/.gradle/caches/transforms-3/6a4c6d1c6c123dd0fc5c77c2fb3649c5/transformed/jetified-firebase-common-20.1.1/AndroidManifest.xml:26:9-31:39
+96            android:name="com.google.firebase.provider.FirebaseInitProvider"
+96-->[com.google.firebase:firebase-common:20.1.1] /Users/yanapavlova/.gradle/caches/transforms-3/6a4c6d1c6c123dd0fc5c77c2fb3649c5/transformed/jetified-firebase-common-20.1.1/AndroidManifest.xml:27:13-77
+97            android:authorities="com.example.first_draft.firebaseinitprovider"
+97-->[com.google.firebase:firebase-common:20.1.1] /Users/yanapavlova/.gradle/caches/transforms-3/6a4c6d1c6c123dd0fc5c77c2fb3649c5/transformed/jetified-firebase-common-20.1.1/AndroidManifest.xml:28:13-72
+98            android:directBootAware="true"
+98-->[com.google.firebase:firebase-common:20.1.1] /Users/yanapavlova/.gradle/caches/transforms-3/6a4c6d1c6c123dd0fc5c77c2fb3649c5/transformed/jetified-firebase-common-20.1.1/AndroidManifest.xml:29:13-43
+99            android:exported="false"
+99-->[com.google.firebase:firebase-common:20.1.1] /Users/yanapavlova/.gradle/caches/transforms-3/6a4c6d1c6c123dd0fc5c77c2fb3649c5/transformed/jetified-firebase-common-20.1.1/AndroidManifest.xml:30:13-37
+100            android:initOrder="100" />
+100-->[com.google.firebase:firebase-common:20.1.1] /Users/yanapavlova/.gradle/caches/transforms-3/6a4c6d1c6c123dd0fc5c77c2fb3649c5/transformed/jetified-firebase-common-20.1.1/AndroidManifest.xml:31:13-36
+101
+102        <activity
+102-->[com.google.android.gms:play-services-base:18.0.1] /Users/yanapavlova/.gradle/caches/transforms-3/c13d9e5ecb09d9c19ab8309c72c4c353/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+103            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+103-->[com.google.android.gms:play-services-base:18.0.1] /Users/yanapavlova/.gradle/caches/transforms-3/c13d9e5ecb09d9c19ab8309c72c4c353/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+104            android:exported="false"
+104-->[com.google.android.gms:play-services-base:18.0.1] /Users/yanapavlova/.gradle/caches/transforms-3/c13d9e5ecb09d9c19ab8309c72c4c353/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+105            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+105-->[com.google.android.gms:play-services-base:18.0.1] /Users/yanapavlova/.gradle/caches/transforms-3/c13d9e5ecb09d9c19ab8309c72c4c353/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+106
+107        <meta-data
+107-->[com.google.android.gms:play-services-basement:18.0.0] /Users/yanapavlova/.gradle/caches/transforms-3/fc0b42180d6cfa4088f876f2de646fba/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:21:9-23:69
+108            android:name="com.google.android.gms.version"
+108-->[com.google.android.gms:play-services-basement:18.0.0] /Users/yanapavlova/.gradle/caches/transforms-3/fc0b42180d6cfa4088f876f2de646fba/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:22:13-58
+109            android:value="@integer/google_play_services_version" />
+109-->[com.google.android.gms:play-services-basement:18.0.0] /Users/yanapavlova/.gradle/caches/transforms-3/fc0b42180d6cfa4088f876f2de646fba/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:23:13-66
+110
+111        <service
+111-->[com.google.android.datatransport:transport-backend-cct:3.1.2] /Users/yanapavlova/.gradle/caches/transforms-3/b6b831e730f2e83486e776b830d1a8e6/transformed/jetified-transport-backend-cct-3.1.2/AndroidManifest.xml:29:9-35:19
+112            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+112-->[com.google.android.datatransport:transport-backend-cct:3.1.2] /Users/yanapavlova/.gradle/caches/transforms-3/b6b831e730f2e83486e776b830d1a8e6/transformed/jetified-transport-backend-cct-3.1.2/AndroidManifest.xml:30:13-103
+113            android:exported="false" >
+113-->[com.google.android.datatransport:transport-backend-cct:3.1.2] /Users/yanapavlova/.gradle/caches/transforms-3/b6b831e730f2e83486e776b830d1a8e6/transformed/jetified-transport-backend-cct-3.1.2/AndroidManifest.xml:31:13-37
+114            <meta-data
+114-->[com.google.android.datatransport:transport-backend-cct:3.1.2] /Users/yanapavlova/.gradle/caches/transforms-3/b6b831e730f2e83486e776b830d1a8e6/transformed/jetified-transport-backend-cct-3.1.2/AndroidManifest.xml:32:13-34:39
+115                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+115-->[com.google.android.datatransport:transport-backend-cct:3.1.2] /Users/yanapavlova/.gradle/caches/transforms-3/b6b831e730f2e83486e776b830d1a8e6/transformed/jetified-transport-backend-cct-3.1.2/AndroidManifest.xml:33:17-94
+116                android:value="cct" />
+116-->[com.google.android.datatransport:transport-backend-cct:3.1.2] /Users/yanapavlova/.gradle/caches/transforms-3/b6b831e730f2e83486e776b830d1a8e6/transformed/jetified-transport-backend-cct-3.1.2/AndroidManifest.xml:34:17-36
+117        </service>
+118        <service
+118-->[com.google.android.datatransport:transport-runtime:3.1.2] /Users/yanapavlova/.gradle/caches/transforms-3/171b1f343d1cda168221f85eefcac716/transformed/jetified-transport-runtime-3.1.2/AndroidManifest.xml:26:9-30:19
+119            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+119-->[com.google.android.datatransport:transport-runtime:3.1.2] /Users/yanapavlova/.gradle/caches/transforms-3/171b1f343d1cda168221f85eefcac716/transformed/jetified-transport-runtime-3.1.2/AndroidManifest.xml:27:13-117
+120            android:exported="false"
+120-->[com.google.android.datatransport:transport-runtime:3.1.2] /Users/yanapavlova/.gradle/caches/transforms-3/171b1f343d1cda168221f85eefcac716/transformed/jetified-transport-runtime-3.1.2/AndroidManifest.xml:28:13-37
+121            android:permission="android.permission.BIND_JOB_SERVICE" >
+121-->[com.google.android.datatransport:transport-runtime:3.1.2] /Users/yanapavlova/.gradle/caches/transforms-3/171b1f343d1cda168221f85eefcac716/transformed/jetified-transport-runtime-3.1.2/AndroidManifest.xml:29:13-69
+122        </service>
+123
+124        <receiver
+124-->[com.google.android.datatransport:transport-runtime:3.1.2] /Users/yanapavlova/.gradle/caches/transforms-3/171b1f343d1cda168221f85eefcac716/transformed/jetified-transport-runtime-3.1.2/AndroidManifest.xml:32:9-34:40
+125            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+125-->[com.google.android.datatransport:transport-runtime:3.1.2] /Users/yanapavlova/.gradle/caches/transforms-3/171b1f343d1cda168221f85eefcac716/transformed/jetified-transport-runtime-3.1.2/AndroidManifest.xml:33:13-132
+126            android:exported="false" />
+126-->[com.google.android.datatransport:transport-runtime:3.1.2] /Users/yanapavlova/.gradle/caches/transforms-3/171b1f343d1cda168221f85eefcac716/transformed/jetified-transport-runtime-3.1.2/AndroidManifest.xml:34:13-37
+127    </application>
+128
+129</manifest>

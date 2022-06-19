@@ -1,5 +1,6 @@
+import 'dart:convert';
 import 'dart:math';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 
@@ -11,18 +12,27 @@ class TinderScreen extends StatefulWidget {
 }
 
 class _TinderScreenState extends State<TinderScreen> {
+  late Response response;
+
   String textOfJoke = 'Tap to get a joke';
   String imagePath = 'assets/images/chuck_norris_1.png';
+  final CollectionReference favouriteJokes =
+      FirebaseFirestore.instance.collection('favoriteJokes');
   void _getJoke() async {
     Random r = Random();
     Dio dio = Dio();
     var num = (r.nextInt(9) + 1).toString();
-    Response response =
-        await dio.get("https://api.chucknorris.io/jokes/random");
+    response = await dio.get("https://api.chucknorris.io/jokes/random");
     setState(() {
       textOfJoke = response.data['value'];
       imagePath = 'assets/images/chuck_norris_$num.png';
     });
+  }
+
+  void _likeJoke() async {
+    String jsonString = response.toString();
+    Map<String, dynamic> d = json.decode(jsonString.trim());
+    await favouriteJokes.add(d);
   }
 
   void _showDialog() {
@@ -63,6 +73,13 @@ class _TinderScreenState extends State<TinderScreen> {
           ),
         ]),
         centerTitle: true,
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/favorite');
+              },
+              icon: Icon(Icons.list))
+        ],
       ),
       body: SafeArea(
         child: Column(
@@ -140,6 +157,13 @@ class _TinderScreenState extends State<TinderScreen> {
                       _showDialog();
                     },
                     icon: const Icon(Icons.heart_broken_outlined),
+                    iconSize: 35,
+                    color: const Color(0xffff99cc)),
+                IconButton(
+                    onPressed: () {
+                      _likeJoke();
+                    },
+                    icon: const Icon(Icons.save_alt_sharp),
                     iconSize: 35,
                     color: const Color(0xffff99cc)),
                 IconButton(

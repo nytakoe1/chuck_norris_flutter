@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class FirstTipScreen extends StatelessWidget {
   const FirstTipScreen({Key? key}) : super(key: key);
@@ -28,44 +29,47 @@ class FirstTipScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Stack(
-                  children: [
-                    Text(
-                      'How to use the app?',
-                      style: TextStyle(
-                          shadows: const <Shadow>[
+                Container(
+                  //padding: EdgeInsets.all(1),
+                  child: Stack(
+                    children: [
+                      Text(
+                        'use'.tr,
+                        style: TextStyle(
+                            shadows: const <Shadow>[
+                              Shadow(
+                                offset: Offset(1.0, 1.0),
+                                blurRadius: 3.0,
+                                color: Color.fromARGB(130, 0, 0, 0),
+                              ),
+                            ],
+                            fontSize: 18,
+                            letterSpacing: 3,
+                            fontWeight: FontWeight.bold,
+                            foreground: Paint()
+                              ..style = PaintingStyle.stroke
+                              ..strokeWidth = 3
+                              ..color = const Color(0xffff99cc)),
+                      ),
+                      // The text inside
+                      Text(
+                        'use'.tr,
+                        style: TextStyle(
+                          shadows: <Shadow>[
                             Shadow(
                               offset: Offset(1.0, 1.0),
                               blurRadius: 3.0,
                               color: Color.fromARGB(130, 0, 0, 0),
                             ),
                           ],
-                          fontSize: 20,
+                          fontSize: 18,
                           letterSpacing: 3,
                           fontWeight: FontWeight.bold,
-                          foreground: Paint()
-                            ..style = PaintingStyle.stroke
-                            ..strokeWidth = 3
-                            ..color = const Color(0xffff99cc)),
-                    ),
-                    // The text inside
-                    const Text(
-                      'How to use the app?',
-                      style: TextStyle(
-                        shadows: <Shadow>[
-                          Shadow(
-                            offset: Offset(1.0, 1.0),
-                            blurRadius: 3.0,
-                            color: Color.fromARGB(130, 0, 0, 0),
-                          ),
-                        ],
-                        fontSize: 20,
-                        letterSpacing: 3,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                          color: Colors.white,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 )
               ],
             ),
@@ -104,7 +108,7 @@ class FirstTipScreen extends StatelessWidget {
                       Stack(
                         children: [
                           Text(
-                            'Here will be a joke',
+                            'futureJoke'.tr,
                             style: TextStyle(
                                 shadows: const <Shadow>[
                                   Shadow(
@@ -122,8 +126,8 @@ class FirstTipScreen extends StatelessWidget {
                                   ..color = const Color(0xffff99cc)),
                           ),
                           // The text inside
-                          const Text(
-                            'Here will be a joke',
+                          Text(
+                            'futureJoke'.tr,
                             style: TextStyle(
                               shadows: <Shadow>[
                                 Shadow(
@@ -155,6 +159,11 @@ class FirstTipScreen extends StatelessWidget {
                     iconSize: 35,
                     color: const Color(0xffff99cc)),
                 IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.save_alt_sharp),
+                    iconSize: 35,
+                    color: const Color(0xffff99cc)),
+                IconButton(
                   onPressed: () {},
                   icon: const Icon(Icons.favorite_border_outlined),
                   iconSize: 35,
@@ -169,7 +178,7 @@ class FirstTipScreen extends StatelessWidget {
                 Stack(
                   children: [
                     Text(
-                      'Dislike the joke',
+                      'dislike'.tr,
                       style: TextStyle(
                           shadows: const <Shadow>[
                             Shadow(
@@ -186,8 +195,8 @@ class FirstTipScreen extends StatelessWidget {
                             ..strokeWidth = 2
                             ..color = const Color(0xffff99cc)),
                     ),
-                    const Text(
-                      'Dislike the joke',
+                    Text(
+                      'dislike'.tr,
                       style: TextStyle(
                         shadows: <Shadow>[
                           Shadow(
@@ -207,7 +216,7 @@ class FirstTipScreen extends StatelessWidget {
                 Stack(
                   children: [
                     Text(
-                      'Like the joke',
+                      'save'.tr,
                       style: TextStyle(
                           shadows: const <Shadow>[
                             Shadow(
@@ -224,8 +233,46 @@ class FirstTipScreen extends StatelessWidget {
                             ..strokeWidth = 2
                             ..color = const Color(0xffff99cc)),
                     ),
-                    const Text(
-                      'Like the joke',
+                    Text(
+                      'save'.tr,
+                      style: TextStyle(
+                        shadows: <Shadow>[
+                          Shadow(
+                            offset: Offset(1.0, 1.0),
+                            blurRadius: 3.0,
+                            color: Color.fromARGB(130, 0, 0, 0),
+                          ),
+                        ],
+                        fontSize: 12,
+                        letterSpacing: 3,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+                Stack(
+                  children: [
+                    Text(
+                      'like'.tr,
+                      style: TextStyle(
+                          shadows: const <Shadow>[
+                            Shadow(
+                              offset: Offset(1.0, 1.0),
+                              blurRadius: 3.0,
+                              color: Color.fromARGB(130, 0, 0, 0),
+                            ),
+                          ],
+                          fontSize: 12,
+                          letterSpacing: 3,
+                          fontWeight: FontWeight.bold,
+                          foreground: Paint()
+                            ..style = PaintingStyle.stroke
+                            ..strokeWidth = 2
+                            ..color = const Color(0xffff99cc)),
+                    ),
+                    Text(
+                      'like'.tr,
                       style: TextStyle(
                         shadows: <Shadow>[
                           Shadow(
@@ -259,7 +306,7 @@ class FirstTipScreen extends StatelessWidget {
                       textStyle: const TextStyle(fontSize: 18),
                       primary: const Color(0xffff99cc),
                     ),
-                    child: const Text('Start')),
+                    child: Text('start'.tr)),
               ],
             ),
           ],
